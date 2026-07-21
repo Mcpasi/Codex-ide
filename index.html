@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dokumentation für Codex IDE">
+  <title>Codex IDE · Dokumentation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top"><span>&lt;/&gt;</span>CODEX<b>IDE</b></a>
+    <nav><a href="#start">Start</a><a href="#backends">Backends</a><a href="#skills">Skills</a><a href="#sicherheit">Sicherheit</a></nav>
+    <a class="npm" href="https://www.npmjs.com/package/codex-ide" target="_blank" rel="noreferrer">npm ↗</a>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div>
+        <p class="eyebrow"><i></i> LIVE CODING, SICHTBAR GEMACHT</p>
+        <h1>Dein Agent.<br><em>Beim Arbeiten.</em></h1>
+        <p class="lead">Codex IDE ist eine agentische Entwicklungsumgebung, in der dein Modell Code direkt im Editor schreibt, Dateien wechselt und Tests über die Live-Konsole ausführt. Alles sichtbar. Alles unter deiner Kontrolle.</p>
+        <p class="actions"><a class="button primary" href="#start">Jetzt starten ↓</a><a class="button" href="#features">Was kann sie?</a></p>
+      </div>
+      <div class="ide" aria-label="Vorschau der Codex IDE Oberfläche">
+        <div class="ide-title"><span class="dots">● ● ●</span> codex-ide · model-home <b>● online</b></div>
+        <div class="ide-body"><aside><strong>EXPLORER</strong><p>▾ <b>my-project</b></p><p class="active">◇ app.js</p><p>◇ styles.css</p><p>◇ index.html</p><small>＋ Neue Datei</small></aside><pre><code><i>1</i><span>const</span> mission = <mark>"build something real"</mark>;
+<i>2</i>
+<i>3</i><span>function</span> <b>launch</b>() {
+<i>4</i>  agent.<b>writeLive</b>({
+<i>5</i>    visible: <u>true</u>,
+<i>6</i>    control: <u>"yours"</u>
+<i>7</i>  });
+<i>8</i>}</code></pre><section class="activity"><strong>AGENT ACTIVITY <b>●</b></strong><p>✓ <b>Kontext analysiert</b><br><small>app.js · styles.css</small></p><p class="working">◌ <b>Code wird geschrieben</b><br><small>Zeile 4–7 wird aktualisiert</small></p><div><small>LIVE KONSOLE</small><code>› npm test</code><b>✓ 12 tests passed</b></div></section></div>
+      </div>
+    </section>
+
+    <section id="features" class="wrap centered section"><p class="eyebrow">DIE IDE IN EINEM SATZ</p><h2>Keine Blackbox.<br><span>Du siehst jeden Schritt.</span></h2><div class="cards"><article><i>⌘</i><h3>Live im Editor</h3><p>Der Agent schreibt und ändert Code direkt dort, wo du ihn siehst. Du kannst jederzeit stoppen, eingreifen oder die Richtung ändern.</p></article><article><i>▸</i><h3>Live-Konsole</h3><p>Syntaxchecks, Tests, Linter und Builds erscheinen mit vollständiger Ausgabe im sichtbaren Terminal.</p></article><article><i>◇</i><h3>Mehr als eine Datei</h3><p>Dateibaum, Ordner, Tabs, Dirty-State und Syntaxdarstellung gehören dazu. Der Agent prüft Mehrdatei-Änderungen vollständig.</p></article></div></section>
+
+    <section id="start" class="wrap section split"><div><p class="eyebrow">01 / SCHNELLSTART</p><h2>In zwei Befehlen<br>zur laufenden IDE.</h2></div><div class="steps"><article><b>01</b><div><h3>Node.js bereithalten</h3><p>Du brauchst Node.js inklusive npm. Für den Codex-Modus kommt zusätzlich die offizielle Codex CLI dazu.</p></div></article><article><b>02</b><div><h3>Installieren & starten</h3><div class="command"><code>npm install -g codex-ide<br>codex-ide start</code><button data-copy="npm install -g codex-ide\ncodex-ide start">Kopieren</button></div><p>Danach öffnet sich die IDE unter <code>http://localhost:8787/</code>.</p></div></article><article><b>03</b><div><h3>Projekt loslegen</h3><p>Dein sicherer Arbeitsbereich liegt immer in <code>model-home/</code>. Erstelle Dateien oder gib dem Agenten die erste Aufgabe.</p></div></article></div></section>
+
+    <section id="backends" class="wrap section"><p class="eyebrow">02 / DREI WEGE ZUM MODELL</p><h2>Du entscheidest,<br><span>wer den Code schreibt.</span></h2><div class="cards backends"><article><b>01</b><h3>Lokal</h3><p>Transformers.js-Textmodell direkt im Browser. Gut zum Ausprobieren, ohne API-Key.</p><code>local</code></article><article><b>02</b><h3>API</h3><p>OpenAI-kompatible Endpoints wie OpenAI, OpenRouter, Ollama oder LM Studio.</p><code>api</code></article><article class="featured"><b>03</b><em>EMPFOHLEN</em><h3>Codex Auth-Bridge</h3><p>Offizielle Codex-CLI-Anmeldung mit Streaming, Modellkatalog, Reasoning-Stufe und sichtbaren Limits.</p><code>codex</code></article></div></section>
+
+    <section class="wrap section split login"><div><p class="eyebrow">CODEX AUTH-BRIDGE</p><h2>Dein Codex-Login<br><span>bleibt deiner.</span></h2><p>Die IDE speichert und kopiert keine Tokens. Sie nutzt die offizielle CLI-Anmeldung und zeigt Status und verfügbare Limits direkt in den Einstellungen.</p></div><div class="loginbox"><p>Für Termux, SSH oder Headless-Setups:</p><div class="command"><code>codex-ide codex login --device-auth</code><button data-copy="codex-ide codex login --device-auth">Kopieren</button></div><code>codex-ide codex status</code><small>Prüft Anmeldung und Gateway-Status.</small></div></section>
+
+    <section id="skills" class="wrap section split skills"><div class="skillmock"><h3>⚙ &nbsp; SKILLS <small>3 aktiv</small></h3><p>● &nbsp; PDF Toolkit <b>aktiv</b></p><p>● &nbsp; Web Research <b>aktiv</b></p><p class="muted">● &nbsp; Custom Skill <b>bereit</b></p><button>+ Skill installieren</button></div><div><p class="eyebrow">03 / SKILL-SYSTEM</p><h2>Mach die IDE<br><span>zu deiner IDE.</span></h2><p>Unter <code>Einstellungen → Skills</code> richtest du integrierte und installierte Skills für Local, API und Codex ein.</p><div class="command"><code>codex-ide skill validate skill_packages/PDF_Skill<br>codex-ide skill pack skill_packages/PDF_Skill</code><button data-copy="codex-ide skill validate skill_packages/PDF_Skill\ncodex-ide skill pack skill_packages/PDF_Skill">Kopieren</button></div><p class="note">Externe Einstiegspunkte führen JavaScript aus und brauchen deshalb deine ausdrückliche Vertrauensbestätigung.</p></div></section>
+
+    <section id="sicherheit" class="wrap centered section"><p class="eyebrow">04 / SICHERHEIT</p><h2>Leistung braucht<br><span>klare Grenzen.</span></h2><div class="cards security"><article><b>01</b><h3>Workspace geschützt</h3><p>Aktionen bleiben auf <code>model-home/</code> begrenzt. Absolute Pfade, Traversal und ausbrechende Symlinks werden blockiert.</p></article><article><b>02</b><h3>Lokales Gateway</h3><p>Das Gateway bindet standardmäßig nur an Loopback und blockiert fremde Browser-Hostnamen gegen DNS-Rebinding.</p></article><article><b>03</b><h3>Isolierte Vorschau</h3><p>HTML-Vorschauen bleiben read-only im Workspace und laufen in einer CSP-Sandbox.</p></article><article><b>04</b><h3>Sichtbarer Editor</h3><p>Änderungen landen ausschließlich im sichtbaren Editor, nicht unsichtbar irgendwo im System.</p></article></div></section>
+    <section class="cta"><p class="eyebrow">BEREIT, ETWAS ZU BAUEN?</p><h2>Starte deine<br><em>nächste Idee.</em></h2><a class="button primary" href="https://www.npmjs.com/package/codex-ide" target="_blank" rel="noreferrer">Codex IDE auf npm ↗</a></section>
+  </main>
+  <footer class="wrap"><span class="brand"><span>&lt;/&gt;</span>CODEX<b>IDE</b></span><p>MIT License · Built for builders</p><a href="#top">Nach oben ↑</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
